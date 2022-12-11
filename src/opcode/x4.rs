@@ -1,6 +1,28 @@
 use crate::lr35902::LR35902;
 
 impl LR35902 {
+    pub fn exec_x40_x4f(&mut self, opcode: u8) {
+        match opcode {
+            0x40 => self.x40_ld_b_b(),
+            0x41 => self.x41_ld_b_c(),
+            0x42 => self.x42_ld_b_d(),
+            0x43 => self.x43_ld_b_e(),
+            0x44 => self.x44_ld_b_h(),
+            0x45 => self.x45_ld_b_l(),
+            0x46 => self.x46_ld_b_hl(),
+            0x47 => self.x47_ld_b_a(),
+            0x48 => self.x48_ld_c_b(),
+            0x49 => self.x49_ld_c_c(),
+            0x4a => self.x4a_ld_c_d(),
+            0x4b => self.x4b_ld_c_e(),
+            0x4c => self.x4c_ld_c_h(),
+            0x4d => self.x4d_ld_c_l(),
+            0x4e => self.x4e_ld_c_hl(),
+            0x4f => self.x4f_ld_c_a(),
+            _ => panic!("Unexpected opcode (0x40 - 0x4F): {}", opcode)
+        }
+    }
+
     pub fn x40_ld_b_b(&mut self) {
         self.bc.upper = self.bc.upper;
         self.cycles += 4;
