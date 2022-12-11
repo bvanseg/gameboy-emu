@@ -60,7 +60,7 @@ impl LR35902 {
         let did_half_carry = if add {
             (((a & 0xf) + (b & 0xf)) & 0x10) == 0x10 // Addition
         } else {
-            (a & 0x0F) - (b & 0x0F) < 0 // Subtraction
+            ((a as i16) & 0x0F) - ((b as i16) & 0x0F) < 0 // Subtraction
         };
 
         self.set_h_flag(did_half_carry);
