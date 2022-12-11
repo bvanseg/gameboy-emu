@@ -4,3 +4,6 @@ language = "en"
 multilingual = false
 src = "src"
 title = "Gameboy Emulator Docs"
+
+[output.html]
+default-theme = "white"
