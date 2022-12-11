@@ -21,4 +21,8 @@ impl Reg16 {
     pub fn add(&mut self, value: u16) {
         self.set(self.get() + value);
     }
+
+    pub fn sub(&mut self, value: u16) {
+        self.set(self.get() - value);
+    }
 }
