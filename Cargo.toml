@@ -1,4 +1,5 @@
 [package]
+authors = ["Boston Vanseghi"]
 name = "gbc-webasm-emu"
 version = "0.1.0"
 edition = "2021"
