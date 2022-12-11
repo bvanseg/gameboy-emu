@@ -20,13 +20,7 @@ impl LR35902 {
 
     fn exec(&mut self, opcode: u8) {
         match opcode {
-            0x00 => self.x00_nop(),
-            0x01 => self.x01_ld_bc_imm16(),
-            0x02 => {}, // TODO:
-            0x03 => self.x03_inc_bc(),
-            0x04 => self.x04_inc_b(),
-            0x05 => self.x05_dec_b(),
-            0x06 => self.x06_ld_b_imm8(),
+            0x00..=0x0f => self.exec_x00_x0f(opcode),
             0x10 => exit(0),
 
             0x16 => self.x16_ld_d_imm8(),
